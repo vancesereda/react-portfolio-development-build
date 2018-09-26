@@ -14,7 +14,7 @@ class About extends Component {
         <img className="img-responsive img" src="/vance.jpg" alt="avatar" />
             
             <p>I'm a chemical engineer (BS ChemE '18, Univ. of Washington) turned software developer, currently living in Seattle, WA. 
-           I'm passionate about web development and data engineering.
+           I'm passionate about making interactive web apps and data engineering.
            
            
             </p>

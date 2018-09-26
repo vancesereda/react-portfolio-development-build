@@ -12,7 +12,7 @@ class Home extends Component {
     <div className="bg-top-div main">
         <Container className="text-center">
             <div>
-                <Jumbotron className="jumbotron-container">
+                <Jumbotron className="jum">
                     <h1 className="jumbotron-text display-3 text-center">
                     Front End Web Development</h1>
                     <h2 className="lead jumbotron-text">
@@ -24,11 +24,11 @@ class Home extends Component {
                        
 
                     
-                        
+                    
                         <br />
                     
-                        <i className="fa fa-github fa-lg icon-padding" ></i>
-                        <i className="fa fa-linkedin fa-lg icon-padding" ></i>
+                        <a href="https://www.github.com/vancesereda/" style={{'color':'black'}}><i className="fa fa-github fa-lg icon-padding" ></i></a>
+                        <a href="https://www.linkedin.com/in/vancesereda/" style={{'color':'black'}}><i className="fa fa-linkedin fa-lg icon-padding" ></i></a>
                         </h2>
                         
                     

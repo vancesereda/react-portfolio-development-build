@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Col, Row, Container} from 'reactstrap'
 import Calculator from './projects/Calculator'
 import WeatherApp from './projects/WeatherApp'
-
+import QuoteMachine from './projects/QuoteMachine.js'
 class Projects extends Component {
     render() {
         return (
@@ -14,11 +14,14 @@ class Projects extends Component {
                         <br />
  
                         <WeatherApp/>
-                        <p className= "in-between">Created with LocationIQ (for geolocation), 
-                        Axios & DarkSky API for API calls, and WeatherIcons.</p> <br />
+                        <p className= "in-between" >Created with LocationIQ (for geolocation), 
+                        Axios & DarkSky API for API calls, and WeatherIcons. API calls rerouted through Amazon API Gateway for CORS passthrough.</p> <br />
                         <br />
                         
-                        <Calculator />
+                        <div id="boys-now"><Calculator /></div>
+                        <br />
+                        
+                        <div id="quoteMachine"><QuoteMachine /></div>
                         <br />
                     </Col>
                 </Container>

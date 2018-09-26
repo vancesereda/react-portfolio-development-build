@@ -50,14 +50,14 @@ export default class CustomNavbar extends React.Component {
                     React
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem  tag={Link} to="/Projects#Weather">
+                  <DropdownItem  tag={Link} to="/Projects">
                    Weather App
                   </DropdownItem>
-                  <DropdownItem tag={Link} to="/Projects#QuoteMachine">
-                    Random Quote Generator
+                  <DropdownItem tag={Link} to="/Projects">
+                    Calculator
                   </DropdownItem>
-                  <DropdownItem tag={Link} to="/Projects#Calculator">
-                   Calculator
+                  <DropdownItem tag={Link} to="/Projects" href="/Projects">
+                   Random Quote Generator
                   </DropdownItem>
                   <DropdownItem divider />
                  {/*} <DropdownItem header >
@@ -77,31 +77,31 @@ export default class CustomNavbar extends React.Component {
                     API / Microservices
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>
-                    Timestamp 
+                  <DropdownItem tag='a'> 
+                    <a href="https://skitter-notify.glitch.me/">Timestamp </a>
                   </DropdownItem>
-                  <DropdownItem>
-                    Request Parser Header 
+                  <DropdownItem tag='a'>
+                    <a href="https://skitter-notify.glitch.me/">Request Parser Header</a>
                   </DropdownItem>
-                  <DropdownItem>
-                    URL Shortener 
+                  <DropdownItem tag='a'> 
+                  <a href="https://skitter-notify.glitch.me/">URL Shortener</a> 
                   </DropdownItem>
-                  <DropdownItem>
-                    Exercise Tracker
+                  <DropdownItem tag='a'>
+                  <a href="https://skitter-notify.glitch.me/">Exercise Tracker</a>
                   </DropdownItem>
-                  <DropdownItem>
-                   File Metadata 
+                  <DropdownItem tag='a'>
+                  <a href="https://skitter-notify.glitch.me/">File Metadata</a>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem header>
                   Python / Data Science
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>
-                    BitMEX Algorithm Trading Bot
+                  <DropdownItem tag='a'>
+                  <a href="https://github.com/vancesereda/"> BitMEX Algorithm Trading Bot</a>
                   </DropdownItem>
-                  <DropdownItem>
-                    Algorithm Backtester
+                  <DropdownItem tag='a'>
+                   <a href="https://github.com/vancesereda/"> Algorithm Backtester</a>
                   </DropdownItem>
 
                 </DropdownMenu>

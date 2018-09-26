@@ -9,6 +9,14 @@ import About from './components/About'
 // import Calculator from './components/Navbar/Calculator'
 import MarkdownPreviewer from './components/projects/MarkdownPreviewer'
 import Projects from './components/Projects'
+import WeatherApp from './components/projects/WeatherApp';
+import Calculator from './components/projects/Calculator';
+import QuoteMachine from './components/projects/QuoteMachine';
+
+
+
+
+
 
 class App extends Component {
   render() {

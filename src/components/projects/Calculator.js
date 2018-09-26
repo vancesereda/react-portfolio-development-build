@@ -15,11 +15,16 @@ class Calculator extends Component {
       value: null,
       displayValue: '0',
       waitingForOperand: false,
-      operator: null
+      operator: null,
+     
     }
   }
-
-
+  /*handlerTwo = (e) => {
+    e.preventDefault()
+    this.setState({
+      secondSetEnabled: false
+    })
+  }*/
   inputDigit =  (digit) => {
     const {displayValue, waitingForOperand} = this.state
 
@@ -76,6 +81,8 @@ class Calculator extends Component {
       displayValue: String(value / 100)
     })
   }
+
+  
   performOperation = (nextOperator) => {
     const {displayValue, operator, value } = this.state
     
@@ -109,45 +116,45 @@ class Calculator extends Component {
     })
   }
   render() {
-    const { displayValue } = this.state;
+    const { displayValue, value, secondSetEnabled } = this.state;
     return (
-    <div className="project-border text-center">
+    <div className="project-border background-box text-center">
       <h3>Calculator</h3>
       <Container className="calc-resize" >
-        
-        <Row>
-      
+        <Row> 
+         
           <Input xs="12" lg="12" value={displayValue} style={{'marginBottom': '10px'}} className=""/>
+          
           <Col xs="3" className="padding-0"> 
-            <Button  outline block className=""  color="primary" onClick={()=> this.clearDisplay()}>AC</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(7)}>7</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(4)} >4</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(1)}>1</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.toggleSign()}>±</Button>  
+              <Button  outline block className="" color="primary" onClick={()=> this.clearDisplay()}>AC</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(7)}>7</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(4)} >4</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(1)}>1</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.toggleSign()}>±</Button>  
           </Col>
           <Col xs="3" className="padding-0"> 
-            <Button  outline block className=""  color="secondary">()</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(8)}>8</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(5)}>5</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(2)}>2</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(0)}>0</Button>  
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputPercent()}>%</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(8)}>8</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(5)}>5</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(2)}>2</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(0)}>0</Button>  
           </Col>
           <Col xs="3" className="padding-0"> 
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputPercent()}>%</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(9)}>9</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(6)}>6</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDigit(3)}>3</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.inputDot()}>.</Button>    
+              <Button  outline block className="" color="secondary" onClick={()=> {}}>()</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(9)}>9</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(6)}>6</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDigit(3)}>3</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.inputDot()}>.</Button>    
           </Col>
-          <Col xs="3" className="padding-0"> 
-            <Button  outline block className=""  color="secondary" onClick={()=> this.performOperation('/')}>&divide;</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.performOperation('*')}>&times;</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.performOperation('-')}>-</Button>
-            <Button  outline block className=""  color="secondary" onClick={()=> this.performOperation('+')}>+</Button>
-            <Button  block className="" color="primary" onClick={()=> this.performOperation('=')}>=</Button>  
-          </Col>
+            <Col xs="3" className="padding-0"> 
+              <Button  outline block className="" color="secondary" onClick={()=> this.performOperation('/')}>&divide;</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.performOperation('*')}>&times;</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.performOperation('-')}>-</Button>
+              <Button  outline block className="" color="secondary" onClick={()=> this.performOperation('+')}>+</Button>
+              <Button  block className="" color="primary" onClick={()=> this.performOperation('=')}>=</Button>  
+            </Col>
+      
         </Row>
-        
         
 
     
@@ -157,6 +164,12 @@ class Calculator extends Component {
     );
   }
 }
+
+
+
+
+
+
 
 export default Calculator;
 

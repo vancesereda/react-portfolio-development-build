@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Col, Container, Row, Input} from 'reactstrap'
+import { Col, Container, Row, Input, Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap'
 import './WeatherApp.css'
 import './../Projects.css'
-import API from './api';
-import axios from 'axios'
+import axios from 'axios-jsonp-pro'
 import WeatherIcon from 'react-icons-weather'
+let cities = require('./cities.json')
 
 
 
@@ -17,11 +17,13 @@ class WeatherApp extends Component {
           weather: '',
           metric: false,
           day: 0,
-          value: ''
+          value: '',
+          clear: false,
+          dropdownOpen: false
         },
         this.API_KEY = '349ebcb75e6527'
+      
       }
-
     componentDidMount() {
 
       //Get geolocation and call API for location key
@@ -46,10 +48,10 @@ class WeatherApp extends Component {
 
         const { latitude, longitude } = position.coords;
         // const url = `/currentconditions/v1/${LocationData.Key}`
-        const weather =  await API.get(`${latitude}, ${longitude}`).then(res => res.data);
+        const weather =  await axios.get(`https://mym62feki7.execute-api.us-east-1.amazonaws.com/stage-1/${latitude},${longitude}`).then(res => res.data);
         console.log(weather.daily.data);
         console.log(weather)
-        const geo = await API.get(`https://us1.locationiq.com/v1/reverse.php`, 
+        const geo = await axios.get(`https://us1.locationiq.com/v1/reverse.php`,
         {
           params: {
             key: this.API_KEY,
@@ -62,6 +64,12 @@ class WeatherApp extends Component {
 
            return res.data;
          })
+
+         
+
+
+         
+
          this.setState({ geo, weather })
       }
 
@@ -92,17 +100,11 @@ class WeatherApp extends Component {
 
     }
 
-    handleChange = (event) => {
-      // const {value} = this.state;
-
-        this.setState({value:event.target.value})
-      
-
-    }
-
+   
     handleKeyPress = (event) => {
       var code = event.keyCode || event.which;
       if(code === 13) { //13 is the enter keycode
+        this.setState({clear: false})
         console.log(event.target.value)
         this.handleLocationChange(event.target.value)
         // this.handleLocationChange(event.target)
@@ -111,7 +113,9 @@ class WeatherApp extends Component {
     }
     handleLocationChange = async (searchString) => {
       
-      const location = await API.get(`https://us1.locationiq.com/v1/search.php`, 
+
+
+      const location = await axios.get(`https://us1.locationiq.com/v1/search.php`, 
         {
           params: {
             key: this.API_KEY,
@@ -120,7 +124,8 @@ class WeatherApp extends Component {
           }}).then(res => res.data)
       console.log(location)
       const { lat, lon } = location[0]
-      const weather = await API.get(`${lat}, ${lon}`).then(res=> {
+      const weather = await axios.get(`https://mym62feki7.execute-api.us-east-1.amazonaws.com/stage-1/${lat}, ${lon}`)
+      .then(res=> {
         console.log(res.data)
         return res.data
       })
@@ -130,6 +135,32 @@ class WeatherApp extends Component {
       this.setState({weather})
     }
 
+    checkandToggleDropDown = () => {
+      const { value, dropdownOpen } = this.state;
+      if (value.length > 5 && dropdownOpen == false) {
+        this.setState({dropdownOpen: true})
+      } else if (value.length < 5) {
+        this.setState({dropdownOpen: false})
+      }
+    }
+
+    handleChange = (event) => {
+
+
+
+
+      const {value} = event.target;
+      this.setState({value:event.target.value})
+      this.checkandToggleDropDown();
+      
+
+
+
+
+    }
+
+    
+
     render() {
       const days = ["Sunday", "Monday", "Tuesday", 
                 "Wednesday", "Thursday", "Friday", 
@@ -138,7 +169,7 @@ class WeatherApp extends Component {
       const daysRestructured = days.slice(today,days.length).concat(days.slice(0,today))
       // console.log(daysRestructured)
 
-      const { geo, weather, day, metric} = this.state || "";
+      const { geo, weather, day, metric, value} = this.state || "";
       const { city, state } = geo.address || "";
       const { data } = weather.daily || "";
       // console.log(city)
@@ -155,20 +186,41 @@ class WeatherApp extends Component {
    {data ?  
     <Container fluid >
         <Row className="row-1">
-            <Col xs="9" lg="3" className="left-side">
-            <h2><Input placeholder={cityStateDefault} 
-                className="transparent-input"
-                onKeyPress={this.handleKeyPress}
-                onChange={this.handleChange}
-                value={this.state.value}/></h2><h3 style={{'font-size':'10px', 'padding-bottom':'10px'}}>or type location</h3>
-            <h3>{daysRestructured[day]}</h3>
-            <h3>{/*day===0 ? weather.minutely.summary :*/data[day].summary}</h3>
-           
+            <Col xs="9" lg="4" className="left-side">
+             
+              <Dropdown isOpen={this.state.dropdownOpen}>
+                <DropdownToggle
+                                tag="span"
+                               
+                                data-toggle="dropdown"
+                                aria-expanded={this.state.dropdownOpen}>
+                
+                    <Input placeholder={this.state.clear ? null : cityStateDefault} 
+                      className="transparent-input"
+                      onClick={()=>this.setState({clear:true})}
+                      onKeyPress={this.handleKeyPress}
+                      onChange={this.handleChange}
+                      value={value}/>
+
+
+
+                </DropdownToggle>
+                <DropdownMenu>
+                  <div >Custom dropdown item</div>
+                  <div >Custom dropdown item</div>
+                  <div >Custom dropdown item</div>
+                  <div >Custom dropdown item</div>
+                </DropdownMenu>
+              </Dropdown>
+              <h3 style={{'font-size':'10px', 'padding-bottom':'10px'}}>or type location + ↵</h3>
+              <h3>{daysRestructured[day]}</h3>
+              <h3>{/*day===0 ? weather.minutely.summary :*/data[day].summary}</h3>
+            
             
             
         
             </Col>
-            <Col xs="6" md="6" className="text-center  padding-0">
+            <Col xs="6" md="4" className="text-center  padding-0">
               
                 <WeatherIcon name="darksky" 
                 
@@ -187,8 +239,8 @@ class WeatherApp extends Component {
             
             
             </Col>
-            <Col xs="6" md="3" className="right-side padding-0">
-            <h3>Precip<span class="lg-view">itation</span>: {`${Math.round(data[day].precipProbability*100)}%`}<br/>
+            <Col xs="6" md="4" className="right-side padding-0">
+            <h3>Precipitation: {`${Math.round(data[day].precipProbability*100)}%`}<br/>
             Humidity: {`${Math.round(data[day].humidity*100)}%`} <br />
             Wind: {`${Math.round(data[day].windSpeed)} mph`}<br /> </h3>
             
@@ -238,43 +290,4 @@ class WeatherApp extends Component {
     }
 }
 
-/*var options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-  };
-  
-  function success(pos) {
-    var crd = pos.coords;
-    console.log([crd.latitude, crd.longitude])
-    console.log('Your current position is:');
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
-  }
-  
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
-  }
-*/
-const Test = (props) => {
-   return (
-    <div></div>
-   ) 
-}
-
-
-/*const WeatherDayMap = () => {
-
-    return items.map((item, i) => {
-        return
-    })
-}
-              Location <br />
-                Day of Week <br />
-                Partly Cloudy <br />
-                img <br />
-
-
-                */
 export default WeatherApp;

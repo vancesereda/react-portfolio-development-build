@@ -24,9 +24,9 @@ export default class ContactPopover extends React.Component {
         <div id="Popover1" onClick={this.toggle}>
           Contact Me
         </div>
-        <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
-          {/*<PopoverHeader>Contact Me</PopoverHeader>*/}
-          <PopoverBody>Boys Now</PopoverBody>
+        <Popover placement="bottom-start" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
+          {<PopoverHeader>Contact Me</PopoverHeader>}
+          <PopoverBody>650-793-2625<br/><a href="mailto:vancesereda@gmail.com">vancesereda@gmail.com</a></PopoverBody>
         </Popover>
       </div>
     );

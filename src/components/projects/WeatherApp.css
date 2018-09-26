@@ -21,7 +21,7 @@
  
 }*/
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 992px) {
     .app-background {
         background: #ffffff;
         
@@ -61,7 +61,7 @@
         width: 100% !important;
         
         font-family: 'Open Sans', sans-serif;
-        font-size: 11px;
+        font-size: 13px;
     }
 
     .scroll-grid p {
@@ -90,9 +90,10 @@
         display:none;
     }
     
+    
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 992px) {
 
     .main-weather-icon {
         display:block;
@@ -142,7 +143,7 @@
         width: 100% !important;
         
         font-family: 'Open Sans', sans-serif;
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .scroll-grid p {
@@ -160,14 +161,33 @@
 
 }
 
+
 .transparent-input {
     color: black !important;
     padding-left:0px;
     font-size: 20px;
     background: transparent;
     border: none;
-    overflow-x: scroll
+    overflow: visible;
 }
 .form-control::placeholder {
     color: black !important
+}
+
+
+input[type=text], textarea {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+}
+   
+  input[type=text]:focus, textarea:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgba(81, 203, 238, 1);
 }

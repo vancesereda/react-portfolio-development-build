@@ -1,0 +1,59 @@
+.pull-right {
+    margin-right: 1vw;
+    margin-left: .8vw;
+}
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+.fix-height {
+    position:relative;
+    height: 210px
+}
+  
+.animate {
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
+}
+
+
+.background {
+  color: rgb(255, 255, 255) !important
+}
+
+.pre-text {
+  font-size: 50px !important
+}
+
+.something {
+  background-color: #f9f9f9 !important;
+  border: 3px solid #e0e0e0;
+  box-sizing: content-box;
+}
+@media screen and (max-width:996px) {
+
+
+  
+    .main-text h2{
+      font-size:25px;
+    }
+    .main-text p {
+      font-size: 20px;
+    }
+
+    .fix-height {
+      position:relative;
+      height: 300px
+    }
+
+
+
+}

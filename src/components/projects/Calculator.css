@@ -2,19 +2,31 @@
     padding:0 0 0 0 !important;
 }
 
+.background-box {
+    box-sizing: content-box;
+    background-color: #ffffff
+
+}
+
 
 @media screen and (max-width: 720px) {
 
     .calc-resize {
-        font-size: 100px !important;
+        font-size: 18px !important;
+        overflow: hidden;
     }
 
+
 }
+
+
+
 @media screen and (min-width: 720px) {
 
     .calc-resize {
         width: 45% !important
     }
+
 
 }
 
