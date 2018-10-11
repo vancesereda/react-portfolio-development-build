@@ -125,7 +125,7 @@ class ManageDropdown extends Component {
                            .map(val=>val["city"])
 
         const stateFilter = cities.filter(val => val["city"].includes(this.state.value.substr(0,5)))
-                            .map(val=>val["state"])  
+                            .map(val=>val["abbrev"])  
 
     // console.log(city)
         
@@ -158,7 +158,7 @@ class ManageDropdown extends Component {
 
     {cityFilter.slice(0,5).map( 
         (c, i) => 
-        <div key={i} onClick={this.onClick}>{c}, {stateFilter[i].substr(0,2).toUpperCase()}</div>
+        <div key={i} onClick={this.onClick}>{c}, {stateFilter[i]}</div>
         )}
 
 
