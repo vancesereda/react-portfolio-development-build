@@ -1,11 +1,13 @@
 import React from 'react';
-const cities = [
+import Abbreviations from './Abbreviations';
+const usaCities = [
   {'city': 'Abbeville', 'state': 'Louisiana'},
   {'city': 'Aberdeen', 'state': 'Maryland'},
   {'city': 'Aberdeen', 'state': 'Mississippi'},
   {'city': 'Aberdeen', 'state': 'South Dakota'},
   {'city': 'Aberdeen', 'state': 'Washington'},
   {'city': 'Abilene', 'state': 'Texas'},
+  {'city': 'Shoreline', 'state': 'Washington'},
   {'city': 'Abilene', 'state': 'Kansas'},
   {'city': 'Abingdon', 'state': 'Virginia'},
   {'city': 'Abington', 'state': 'Massachusetts'},
@@ -5982,5 +5984,12 @@ const cities = [
 {'city': 'Zuni Pueblo', 'state': 'New Mexico'}
 ];
 
+const cities =  usaCities.map((obj, i) => {
+  return  (
+    {"city": `${obj["city"]}`, "state":`${obj["state"]}`, "abbrev": `${Abbreviations.filter(val => val["name"]===obj["state"])[0].abbreviation}`}
+  );
+})
 
 export default cities;
+
+

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Dropdown, DropdownToggle, Input, DropdownMenu } from 'reactstrap';
-import cities from './usaCities.js';
+import cities from './usaCities';
 
 class ManageDropdown extends Component {
 
@@ -29,7 +29,7 @@ class ManageDropdown extends Component {
         if (value === '') {
             this.handlePlaceholder(true);
         } else if (value.length > 5 && !isClear) {
-            console.log('onClick Send happened')
+            // console.log('onClick Send happened')
             this.handleClick(event.target.textContent)
             this.toggle();
         }
@@ -56,7 +56,7 @@ class ManageDropdown extends Component {
     
         
         this.setState({value: '', locationSearch: val})
-        console.log(val, ' sent to handleLocationChange')
+        // console.log(val, ' sent to handleLocationChange')
         this.props.handleLocationChange(val).then(res => this.handlePlaceholder(false))
         // this.handleLocationChange(event.target)
         //Do stuff in here
@@ -117,7 +117,7 @@ class ManageDropdown extends Component {
         
 
         // console.log(this.props)
-         console.log('component state: ', this.state )
+        //  console.log('component state: ', this.state )
         // console.log('component props: ', this.props)
         // const { dropdownOpen, inputRef, placeholder, value , handleChange} = this.props;
         // const { value, dropdownOpen, inputRef, placeholder } = this.props;
@@ -139,6 +139,7 @@ class ManageDropdown extends Component {
         toggle= {this.toggle}
         data-toggle="dropdown"
         aria-expanded={dropdownOpen}
+        style={{'display':'inline-block'}}
        >
 
 

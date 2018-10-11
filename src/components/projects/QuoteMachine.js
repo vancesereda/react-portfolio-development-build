@@ -46,8 +46,8 @@ class QuoteMachine extends Component {
         
         const { hasQuote, author, quote, animate } = this.state;
 
-        
-        author.replace(/-/g, '');
+        console.log(quote, 'quote length: ', quote.length)
+        author.replace(/–/g, '');
 
         return (
         <div 
@@ -55,7 +55,7 @@ class QuoteMachine extends Component {
             className={animate ? 'animate ' : ''} >
 
                 <h2 className="main-text">{author}</h2>
-                <p className = "lead main-text">{quote}</p>
+                <p className = "lead">{quote}</p>
             <br />
         </div>
             

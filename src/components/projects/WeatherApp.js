@@ -5,7 +5,7 @@ import './../Projects.css'
 import axios from 'axios-jsonp-pro'
 import WeatherIcon from 'react-icons-weather'
 import ManageDropdown from './ManageDropdown'
-let cities = require('./usaCities.js')
+import Abbreviations from './Abbreviations'
 
 
 
@@ -38,7 +38,7 @@ class WeatherApp extends Component {
     }
     const options = {
       enableHighAccuracy: true,
-      timeout: 5000,
+      timeout: 100000,
       maximumAge: 0
     };
     const error = (err) => {
@@ -49,8 +49,8 @@ class WeatherApp extends Component {
       const { latitude, longitude } = position.coords;
       // const url = `/currentconditions/v1/${LocationData.Key}`
       const weather = await axios.get(`https://mym62feki7.execute-api.us-east-1.amazonaws.com/stage-1/${latitude},${longitude}`).then(res => res.data);
-      console.log(weather.daily.data);
-      console.log(weather)
+      // console.log(weather.daily.data);
+      // console.log(weather)
       const geo = await axios.get(`https://us1.locationiq.com/v1/reverse.php`,
         {
           params: {
@@ -66,10 +66,6 @@ class WeatherApp extends Component {
         })
       this.setState({ geo, weather })
     }
-
-
-    
-
     getUserLocation()
       .then(showPosition)
       .catch(function (err) {
@@ -109,7 +105,6 @@ class WeatherApp extends Component {
   handleLocationChange = async (searchString) => {
 
 
-
     const location = await axios.get(`https://us1.locationiq.com/v1/search.php`,
       {
         params: {
@@ -118,11 +113,11 @@ class WeatherApp extends Component {
           format: 'json'
         }
       }).then(res => res.data)
-    console.log(location)
+    // console.log(location)
     const { lat, lon } = location[0]
     const weather = await axios.get(`https://mym62feki7.execute-api.us-east-1.amazonaws.com/stage-1/${lat}, ${lon}`)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         return res.data
       })
 
@@ -151,11 +146,12 @@ class WeatherApp extends Component {
     // console.log(daysRestructured)
 
     const { geo, weather, day, metric, value } = this.state || "";
-    const { city, state } = geo.address || "";
+    const { state, city, town } = geo.address || "";
     const { data } = weather.daily || "";
+    
+    console.log(Abbreviations)
 
-
-    const cityStateDefault = geo ? `${city}, ${state.substr(0,2).toUpperCase()}` : '' ;
+    const cityStateDefault = geo ? `${city ? city : town}, ${Abbreviations.filter(obj => obj["name"]===state)[0].abbreviation}` : '' ;
 
 
 
@@ -175,7 +171,7 @@ class WeatherApp extends Component {
 
                     
                 
-                <h3 style={{ 'font-size': '10px', 'padding-bottom': '10px' }}>or type location</h3>
+                <h3 style={{ 'font-size': '10px', 'padding-bottom': '10px' }}>or type a location</h3>
                 <h3>{daysRestructured[day]}</h3>
                 <h3>{/*day===0 ? weather.minutely.summary :*/data[day].summary}</h3>
 
