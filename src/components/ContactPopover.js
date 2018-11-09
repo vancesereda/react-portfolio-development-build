@@ -22,10 +22,10 @@ export default class ContactPopover extends React.Component {
     return (
       <div>
         <div id="Popover1" onClick={this.toggle}>
-          Contact Me
+          Contact
         </div>
         <Popover placement="bottom-start" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
-          {<PopoverHeader>Contact Me</PopoverHeader>}
+          {<PopoverHeader>Contact Me!</PopoverHeader>}
           <PopoverBody>650-793-2625<br/><a href="mailto:vancesereda@gmail.com">vancesereda@gmail.com</a></PopoverBody>
         </Popover>
       </div>

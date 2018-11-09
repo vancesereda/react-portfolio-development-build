@@ -7,6 +7,10 @@
     /* background-color: #ffffff */
 }
 
+.project-border img {
+    max-width: 100%;
+}
+
 .in-between {
     padding-top: 10px;
     color: grey;
@@ -14,15 +18,9 @@
     font-size: 11px;
 }
 
-#boys-now {
-    
-}
-
-#calculator {
-
-
-}
-
-#quoteMachine {
-
+.info-text{
+    font-size: 13px;
+    padding-top: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
 }

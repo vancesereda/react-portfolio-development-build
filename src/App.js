@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import CustomNavbar from './components/Navbar/Navbar'
-import TextFiller from './components/TextFiller'
-import Home from './components/Home'
+import CustomNavbar from './components/Navbar'
+import Home from './pages/Home'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import About from './components/About'
-// import Calculator from './components/Navbar/Calculator'
-import MarkdownPreviewer from './components/projects/MarkdownPreviewer'
-import Projects from './components/Projects'
-import WeatherApp from './components/projects/WeatherApp';
-import Calculator from './components/projects/Calculator';
-import QuoteMachine from './components/projects/QuoteMachine';
-
+import About from './pages/About'
+import Projects from './pages/Projects'
 
 
 

@@ -29,19 +29,11 @@
     font-family: 'Open Sans', sans-serif;
     height:95vh;
 }
-/*.pink-div {
-    background-color: pink;
-    height: 30vh;
-}
-.yellow-div {
-    background-color: yellow;
-    height: 30vh;
-}*/
+
 .blue-circle-div {
     border-radius: 50%;
     height: 30vh;
     width: 30vh;
-    /* center .blue-circle inside .main */
     position: absolute;
     top: 0;
     bottom: 0;
@@ -49,7 +41,6 @@
     right: 0;
     margin: auto;
     margin-top:7vh;
-    /* center .text-div inside .blue-circle using flexbox */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,12 +50,7 @@
     padding-top: 16vh;
 }
 .jum {
-    /* background: #747c83;  fallback for old browsers */
     background: transparent !important
-    /* background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #eef2f3, #8e9eab); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* padding-top: 20vh; */
-
 }
 
 

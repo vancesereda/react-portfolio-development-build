@@ -20,7 +20,9 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
     "react-skycons": "^0.7.0",
-    "reactstrap": "^6.4.0"
+    "reactstrap": "^6.4.0",
+    "typography": "^0.16.17",
+    "typography-theme-moraga": "^0.15.10"
   },
   "scripts": {
     "start": "react-scripts start",

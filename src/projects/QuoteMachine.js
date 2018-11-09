@@ -36,10 +36,10 @@ class QuoteMachine extends Component {
     getRandomQuote = () => {
 
         const { quotes, quote, author, hasQuote, animate } = this.state;
-        const randomSelection = quotes[Math.floor(Math.random() * 100)]
+        const randomSelection = quotes[Math.floor(Math.random() * 100)];
 
-        this.setState({quote: randomSelection.quote, author:randomSelection.author, hasQuote: true, animate: true})
-        // console.log(this.state.quote)
+        this.setState({quote: randomSelection.quote, author:randomSelection.author, hasQuote: true, animate: true});
+     
     }
 
     renderQuote = () => {

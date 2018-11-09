@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Button, Container, Col, Input, ButtonGroup , Row} from 'reactstrap';
 import './Calculator.css';
-import './../Projects.css'
+import '../pages/Projects.css'
 
 
 
@@ -19,12 +19,6 @@ class Calculator extends Component {
      
     }
   }
-  /*handlerTwo = (e) => {
-    e.preventDefault()
-    this.setState({
-      secondSetEnabled: false
-    })
-  }*/
   inputDigit =  (digit) => {
     const {displayValue, waitingForOperand} = this.state
 
@@ -107,10 +101,7 @@ class Calculator extends Component {
          displayValue : String(computedValue)
       })
     }
-    //const prevValue = ???
-    
-    //const computedValue = operations[operator](prevValue,nextValue)
-    this.setState({
+     this.setState({
       waitingForOperand : true,
       operator: nextOperator
     })
@@ -174,55 +165,6 @@ class Calculator extends Component {
 export default Calculator;
 
 
-
-
-        
-/*<Col xs="3" className="padding-0"><Button block>className="".col</Button>
-<Button block>className="".col</Button>
-<Button block>className="".col</Button>
-<Button block>className="".col</Button></Col>
-<Col xs="3"><Button block>className=""Piss</Button></Col>*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*<Col className="padding-0"> 
-        <Button     size="lg"  outline block className=""color="secondary">()</Button>
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.inputDigit(8)}>8</Button>
-
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.inputDigit(2)}>2</Button>
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.inputDigit(0)}>0</Button>  
-      
-       
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.inputPercent()}>%</Button>
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.inputDigit(9)}>9</Button>
-        
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.inputDigit(12)}>12</Button>
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.inputDot()}>.</Button>    
-      
-       
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.performOperation('/')}>&divide;</Button>
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.performOperation('*')}>&times;</Button>
-        
-        <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.performOperation('+')}>+</Button>
-        <Button color="primary" onClick={()=> this.performOperation('=')}>=</Button>  
-      
-
-
-      <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.inputDigit(1)}>1</Button>
-      <Button     size="lg"  outline block className=""color="secondary" onClick={()=> this.toggleSign()}>±</Button>  
- 
-*/
 
 
 

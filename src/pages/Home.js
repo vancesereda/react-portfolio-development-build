@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import TextFiller from './TextFiller';
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Col, Container, Jumbotron, Row, Button} from 'reactstrap'
@@ -19,21 +18,11 @@ class Home extends Component {
                     </h2>
                     <hr className="my-2" />
                     <h2 className="h2 jumbotron-text" style={{'text-align': 'center'}}>
-                       {/* <Button color="primary">F</Button>*/}
-                       MongoDB | Express | React | Node.js | Python
-                       
-
-                    
-                    
+                       MongoDB | Express | React | Node.js | Python | Java
                         <br />
-                    
                         <a href="https://www.github.com/vancesereda/" style={{'color':'black'}}><i className="fa fa-github fa-lg icon-padding" ></i></a>
                         <a href="https://www.linkedin.com/in/vancesereda/" style={{'color':'black'}}><i className="fa fa-linkedin fa-lg icon-padding" ></i></a>
                         </h2>
-                        
-                    
-                         
-  
                 </Jumbotron>
             </div>
         

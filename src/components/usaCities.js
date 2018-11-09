@@ -1,4 +1,3 @@
-import React from 'react';
 import Abbreviations from './Abbreviations';
 const usaCities = [
   {'city': 'Abbeville', 'state': 'Louisiana'},

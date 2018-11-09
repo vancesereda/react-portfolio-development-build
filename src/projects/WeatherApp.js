@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Col, Container, Row, Input, Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap'
 import './WeatherApp.css'
-import './../Projects.css'
+import '../pages/Projects.css'
 import axios from 'axios-jsonp-pro'
 import WeatherIcon from 'react-icons-weather'
-import ManageDropdown from './ManageDropdown'
-import Abbreviations from './Abbreviations'
+import ManageDropdown from './WeatherManageDropdown'
+import Abbreviations from './../components/Abbreviations'
 
 
 
@@ -104,7 +104,6 @@ class WeatherApp extends Component {
 
   handleLocationChange = async (searchString) => {
 
-
     const location = await axios.get(`https://us1.locationiq.com/v1/search.php`,
       {
         params: {
@@ -113,11 +112,9 @@ class WeatherApp extends Component {
           format: 'json'
         }
       }).then(res => res.data)
-    // console.log(location)
     const { lat, lon } = location[0]
     const weather = await axios.get(`https://mym62feki7.execute-api.us-east-1.amazonaws.com/stage-1/${lat}, ${lon}`)
       .then(res => {
-        // console.log(res.data)
         return res.data
       })
 
@@ -137,20 +134,16 @@ class WeatherApp extends Component {
   
 
   render() {
-    console.log('main state: ', this.state)
     const days = ["Sunday", "Monday", "Tuesday",
       "Wednesday", "Thursday", "Friday",
       "Saturday"];
     const today = new Date().getDay();
-    const daysRestructured = days.slice(today, days.length).concat(days.slice(0, today))
-    // console.log(daysRestructured)
+    const daysRestructured = days.slice(today, days.length).concat(days.slice(0, today));
 
     const { geo, weather, day, metric, value } = this.state || "";
     const { state, city, town } = geo.address || "";
     const { data } = weather.daily || "";
     
-    console.log(Abbreviations)
-
     const cityStateDefault = geo ? `${city ? city : town}, ${Abbreviations.filter(obj => obj["name"]===state)[0].abbreviation}` : '' ;
 
 
@@ -215,7 +208,6 @@ class WeatherApp extends Component {
             <Row className="overflow">
 
               {data.slice(0, 7).map((item, i) => {
-                /* console.log(data.slice(0,6))*/
                 return (
                   <Col onClick={() => this.handleDay(i)} className={`scroll-grid text-center padding-5`} style={i === day ? { 'box-sizing': 'content-box', 'background': '#fdfbfb', 'border': 'solid #dfdfdf 1px' } : null} key={i}>
                     <p>{daysRestructured[i].substr(0, 3)}<span class="lg-view">{daysRestructured[i].substr(3, daysRestructured[i].length)}</span></p>
@@ -231,7 +223,6 @@ class WeatherApp extends Component {
                 )
 
               })}
-              {/*<Col xs={2}></Col>*/}
 
 
 
@@ -251,11 +242,3 @@ class WeatherApp extends Component {
 
 export default WeatherApp;
 
-
-/*handleChange = {this.handleChange}
-dropdownOpen = {this.state.dropdownOpen}
-value = {this.state.value}
-clear = {this.clearInput}
-placeholder = {this.state.isClear ? '' : cityStateDefault}
-toggle = {this.checkandToggleDropDown}
-inputRef = {this.inputRef} */
