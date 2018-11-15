@@ -14,11 +14,11 @@ class Projects extends Component {
                         <br />
                         <div className="background-box project-border">
                            <p className="lead text-center">
-                           <a href="https://decarlo.design">decarlo.design</a><br/></p>
+                           <a href="https://decarlo.design">decarlo.design<br/>
                             {/* <iframe src={`https://decarlo.design`} style={{'width':'100%', 'height': '700px'}}/> */}
                             
                             
-                            <img src={`https://i.imgur.com/cp2ZmVW.png`}/>
+                            <img src={`https://s3.amazonaws.com/www.domdecarlo.com/3.png`}/></a></p>
                                                        
                             <p className="info-text">This is a full site-wide modernization, including mobile design, of the portfolio site of my close friend, Dominic Decarlo. 
                             It utilizes React, GatsbyJS and GraphQL to dynamically create pages querying an easily editable JSON which stores customizable options for each page. 
