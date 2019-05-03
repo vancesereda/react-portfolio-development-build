@@ -4,7 +4,7 @@ import './WeatherApp.css'
 import '../pages/Projects.css'
 import axios from 'axios-jsonp-pro'
 import WeatherIcon from 'react-icons-weather'
-import ManageDropdown from './WeatherManageDropdown'
+import ManageDropdown from './WeatherAppManageDropdown'
 import Abbreviations from './../components/Abbreviations'
 
 
@@ -217,7 +217,7 @@ class WeatherApp extends Component {
                       iconId={i === 0 ? weather.minutely.icon : data[i].icon}
                       flip="horizontal"
                       rotate="90" />
-                    <p>{Math.round(data[i].apparentTemperatureHigh)} | {Math.round(data[i].apparentTemperatureLow)}</p>
+                    <p style={{whiteSpace: 'nowrap'}}> {Math.round(data[i].apparentTemperatureHigh)} | {Math.round(data[i].apparentTemperatureLow)}</p>
                   </Col>
 
                 )

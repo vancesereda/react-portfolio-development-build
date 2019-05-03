@@ -31,7 +31,7 @@ export default class CustomNavbar extends React.Component {
   render() {
     return (
         <Navbar className="bg-top-div head-font" light expand="md" sticky="top"> 
-          <NavbarBrand href="/" className="" >Vance Sereda</NavbarBrand>
+          <NavbarBrand href="/" className="brand" >Vance Sereda</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
