@@ -65,9 +65,6 @@ color: black;
     font-size: inherit;
     display: inline
 }
-.fa-github {
-    padding-left: 5px;
-}
 
 .resize, .resize img {
     width: 50%;

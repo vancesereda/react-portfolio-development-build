@@ -97,7 +97,8 @@ class Projects extends Component {
                             <WeatherApp/>
                             
                             <p className= "in-between" >Created with LocationIQ (for geolocation), 
-                            Axios & DarkSky API for API calls, and WeatherIcons. API calls rerouted through Amazon API Gateway for CORS passthrough.</p> <br />
+                            Axios & DarkSky API for API calls, and WeatherIcons. API calls rerouted through Amazon API Gateway for CORS passthrough.
+                            <strong>Please make sure to enable location for this app.</strong></p> <br />
                             <br />
                         </div>
                         
