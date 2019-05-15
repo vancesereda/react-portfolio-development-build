@@ -18,40 +18,36 @@ class Projects extends Component {
                            <p className="lead text-center">
                            <a href="https://decarlo.design">decarlo.design - Full Stack Serverless CMS </a></p><br/>
                            
-                            
-                            
-                            {/* <img src={`https://s3.amazonaws.com/www.domdecarlo.com/3.png`}/> */}
-
 
                             <SimpleSlider photos={["3","create-page", "edit-page", "log-in", "log-in-active", "page"]} />
                             
-                            
-                            
-                            
-                            
-                            
                                                        
                             <p className="info-text"> Portfolio site and content management system for Dominic Decarlo, visual graphic designer. The CMS was created with AWS DynamoDB, AWS Cognito, and AWS API Gateway. Features create, edit, update, and delete page dialogs for easy user editing. </p> 
-                            <div style={{display: 'flex', justifyContent:'space-around', alignItems: 'center'}}>
-                                <div>
-                                <a href="https://www.github.com/vancesereda/decarlo-cms-client">
-                                <i className="fa fa-lg fa-github" />&nbsp;Front end (React)</a>
-                                    
-                                </div>
-                                <div>
-                                <a href="https://www.github.com/vancesereda/decarlo-cms-api">
-                                <i className="fa fa-lg fa-github" />
-                                    &nbsp;Back end (Serverless, AWS DynamoDB, AWS Cognito)
-
-                                </a>
-                                </div>  
-                                    
-                                    
-                            </div>
-
-
                            
-                            
+                           
+
+                            <Row className="github">
+                                <Col xs={12} md={6} className="text-center">
+
+                                    <a href="https://www.github.com/vancesereda/decarlo-cms-client">
+                                        <i className="fa fa-lg fa-github" />
+                                        <p className="github-font">&nbsp;Front end (React)</p>
+                                    </a>
+
+                                </Col>
+                                <Col xs={12} md={6} className="text-center">
+                                
+                                    <a href="https://www.github.com/vancesereda/decarlo-cms-api">
+                                        <i className="fa fa-lg fa-github" />
+                                        <p className="github-font">&nbsp;Back end (Serverless, AWS DynamoDB, AWS Cognito)</p>
+                                    </a>
+
+                                
+                                
+                                </Col>
+                            </Row>
+  
+
                         </div>
 
                         <br />
@@ -61,32 +57,43 @@ class Projects extends Component {
                                 React Native Music Player
                                 <br />
                             </p>
+                            <SimpleSlider photos={["rn-1", "rn-2","rn-3"]} />
                            
-                            
+
                             
                                                        
                             <p className="info-text">Music player featuring library and background Youtube streaming features. This app allows you to play from your music library, stream Youtube videos as audio in the background, and download videos (and immediately add them to the library).</p> 
-                            <div style={{display: 'flex', justifyContent:'space-around', alignItems: 'center'}}>
-                                <div>
-                                <a href="https://www.github.com/vancesereda/music-player">
-                                <i className="fa fa-lg fa-github" />&nbsp;Front end (React Native)</a>
-                                    
-                                </div>
-                                <div>
-                                <a href="https://www.github.com/vancesereda/yt-av-info">
-                                <i className="fa fa-lg fa-github" />
-                                    &nbsp;Back end (Youtube video info parser hosted on Heroku)
 
-                                </a>
-                                </div>  
-                                    
-                                    
-                            </div>
+
+                            <Row className="github">
+                                <Col xs={12} md={6} className="text-center">
+
+                                    <a href="https://www.github.com/vancesereda/music-player">
+                                        <i className="fa fa-lg fa-github" />&nbsp;
+                                        <p className="github-font">Front end (React Native)</p>
+                                    </a>
+                                        
+                                </Col>
+
+                                <Col xs={12} md={6}  className="text-center">
+
+                                    <a href="https://www.github.com/vancesereda/yt-av-info">
+                                        <i className="fa fa-lg fa-github" />
+                                        <p className="github-font">&nbsp;Back end (Heroku)</p>
+                                    </a>
+                                
+                                </Col>
+
+
+
+
+                            </Row>
 
                             
                         </div>
                         <div id="weather">
                             <br />
+                            
                             <WeatherApp/>
                             
                             <p className= "in-between" >Created with LocationIQ (for geolocation), 
@@ -107,5 +114,7 @@ class Projects extends Component {
         );
     }
 }
+
+
 
 export default Projects;

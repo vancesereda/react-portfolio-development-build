@@ -109,7 +109,9 @@ class Calculator extends Component {
   render() {
     const { displayValue, value, secondSetEnabled } = this.state;
     return (
-    <div className="project-border background-box text-center">
+    <div className="project-border background-box">
+      <a href="https://github.com/vancesereda/react-portfolio-development-build/src/projects/Calculator.js"><i className="fa fa-lg fa-github" style={{paddingLeft: '25px'}} /></a>
+      <div className="text-center">
       <h3>Calculator</h3>
       <Container className="calc-resize" >
         <Row> 
@@ -151,6 +153,7 @@ class Calculator extends Component {
     
 
       </Container>
+      </div>
     </div>
     );
   }

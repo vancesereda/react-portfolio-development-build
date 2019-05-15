@@ -32,6 +32,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "sync": "npm run build && aws s3 sync build/ s3://www.vancesereda2.com &&  aws cloudfront create-invalidation --distribution-id E3CCNXP15VPX3E --paths '/*'"
+    "sync": "react-scripts build && aws s3 sync build/ s3://www.vancesereda2.com &&  aws cloudfront create-invalidation --distribution-id E3CCNXP15VPX3E --paths '/*'"
   }
 }

@@ -29,7 +29,7 @@ export default class SimpleSlider extends Component {
             <div>
                 <img key={photo} src={require(`../images/${photo}.png`)}
                 onLoad={()=>window.dispatchEvent(new Event('resize'))}
-                align={'center'}/>
+                />
             </div>
         ))}
         </Slider>

@@ -18,7 +18,7 @@ class Home extends Component {
                     </h2>
                     <hr className="my-2" />
                     <h2 className="h2 jumbotron-text" style={{'text-align': 'center'}}>
-                       MongoDB | Express | React | Node.js | Python | React Native
+                       Serverless | Express | React | Node.js | Python | React Native
                         <br />
                         <a href="https://www.github.com/vancesereda/" style={{'color':'black'}}><i className="fa fa-github fa-lg icon-padding" ></i></a>
                         <a href="https://www.linkedin.com/in/vancesereda/" style={{'color':'black'}}><i className="fa fa-linkedin fa-lg icon-padding" ></i></a>

@@ -152,10 +152,14 @@ class WeatherApp extends Component {
     return (
 
       <div className="project-border app-background">
+      
         {data ?
           <Container fluid >
+          <a href="https://github.com/vancesereda/react-portfolio-development-build/src/projects/WeatherApp.js"><i className="fa fa-lg fa-github" /></a>
             <Row className="row-1">
+            
               <Col xs="9" lg="4" className="left-side">
+              
 
                 <ManageDropdown handleLocationChange = {this.handleLocationChange}
                                 cityStateDefault = {cityStateDefault}
