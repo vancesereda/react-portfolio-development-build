@@ -65,11 +65,24 @@ class Projects extends Component {
                             
                             
                                                        
-                            <p className="info-text"> Portfolio site and content management system for Dominic Decarlo, visual graphic designer. The CMS was created with AWS DynamoDB, AWS Cognito, and AWS API Gateway. Features create, edit, update, and delete page dialogs for easy user editing. </p> 
-                            <strong><a href="https://www.github.com/vancesereda/decarlo-cms-client">Frontend</a><a href="https://www.github.com/vancesereda/decarlo-cms-api">Backend</a></strong>.        
+                            <p className="info-text">Music player featuring library and background Youtube streaming features. This app allows you to play from your music library, stream Youtube videos as audio in the background, and download videos (and immediately add them to the library).</p> 
+                            <div style={{display: 'flex', justifyContent:'space-around', alignItems: 'center'}}>
+                                <div>
+                                <a href="https://www.github.com/vancesereda/music-player">
+                                <i className="fa fa-lg fa-github" />&nbsp;Front end (React Native)</a>
+                                    
+                                </div>
+                                <div>
+                                <a href="https://www.github.com/vancesereda/yt-av-info">
+                                <i className="fa fa-lg fa-github" />
+                                    &nbsp;Back end (Youtube video info parser hosted on Heroku)
 
+                                </a>
+                                </div>  
+                                    
+                                    
+                            </div>
 
-                           
                             
                         </div>
                         <div id="weather">
