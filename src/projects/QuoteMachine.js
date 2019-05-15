@@ -74,7 +74,7 @@ class QuoteMachine extends Component {
         const { hasQuote, animate } = this.state;
         return (
 <div className="project-border app-background">
-<a href="https://github.com/vancesereda/react-portfolio-development-build/src/projects/QuoteMachine.js"><i className="fa fa-lg fa-github" style={{paddingLeft: '25px', marginBottom: '25px'}} /></a>
+<a href="https://github.com/vancesereda/react-portfolio-development-build/src/projects/QuoteMachine.js"><i className="fa fa-lg fa-github icon-padding-qm"  /></a>
     <Jumbotron className="something">
        
         <br /> 

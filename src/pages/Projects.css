@@ -75,13 +75,21 @@ color: black;
 }
 
 @media screen and (max-width: 500px) {
+
+    .info-text {
+        padding-top: 50px;
+    
+    }
+    .text-center {
+        padding-bottom: 10px
+    }
     .github {
         justify-content: inherit;
         
         
     }
-    .resize {
-        width: 100%
+    .resize, .resize img {
+        width: 90%
     }
     
 } 

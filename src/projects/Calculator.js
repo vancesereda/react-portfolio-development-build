@@ -110,7 +110,7 @@ class Calculator extends Component {
     const { displayValue, value, secondSetEnabled } = this.state;
     return (
     <div className="project-border background-box">
-      <a href="https://github.com/vancesereda/react-portfolio-development-build/src/projects/Calculator.js"><i className="fa fa-lg fa-github" style={{paddingLeft: '25px'}} /></a>
+      <a href="https://github.com/vancesereda/react-portfolio-development-build/src/projects/Calculator.js"><i className="fa fa-lg fa-github icon-padding-calculator" /></a>
       <div className="text-center">
       <h3>Calculator</h3>
       <Container className="calc-resize" >
