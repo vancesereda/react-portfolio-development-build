@@ -3,6 +3,7 @@ import {Col, Row, Container} from 'reactstrap'
 import Calculator from '../projects/Calculator'
 import WeatherApp from '../projects/WeatherApp'
 import QuoteMachine from '../projects/QuoteMachine.js'
+import SimpleSlider from '../components/SimpleSlider.js'
 class Projects extends Component {
     render() {
         return (
@@ -12,34 +13,78 @@ class Projects extends Component {
                     <Col /* lg={{size: 10, offset: 1}} */ xs="12">
                         <h2 style={{'margin-bottom': '20px'}}> Projects </h2>
                         <br />
-                        <div className="background-box project-border">
+                        <div className="background-box project-border" id="decarlo">
+                           
                            <p className="lead text-center">
-                           <a href="https://decarlo.design">decarlo.design<br/>
-                            {/* <iframe src={`https://decarlo.design`} style={{'width':'100%', 'height': '700px'}}/> */}
+                           <a href="https://decarlo.design">decarlo.design - Full Stack Serverless CMS </a></p><br/>
+                           
                             
                             
-                            <img src={`https://s3.amazonaws.com/www.domdecarlo.com/3.png`}/></a></p>
+                            {/* <img src={`https://s3.amazonaws.com/www.domdecarlo.com/3.png`}/> */}
+
+
+                            <SimpleSlider photos={["3","create-page", "edit-page", "log-in", "log-in-active", "page"]} />
+                            
+                            
+                            
+                            
+                            
+                            
                                                        
-                            <p className="info-text">This is a full site-wide modernization, including mobile design, of the portfolio site of my close friend, Dominic Decarlo. 
-                            It utilizes React, GatsbyJS and GraphQL to dynamically create pages querying an easily editable JSON which stores customizable options for each page. 
-                            For this reason, a content management system dovetails nicely and is in progress.
-                            This project is hosted on AWS S3, using Route53 and Cloudfront for routing.</p>
-                                                       
+                            <p className="info-text"> Portfolio site and content management system for Dominic Decarlo, visual graphic designer. The CMS was created with AWS DynamoDB, AWS Cognito, and AWS API Gateway. Features create, edit, update, and delete page dialogs for easy user editing. </p> 
+                            <div style={{display: 'flex', justifyContent:'space-around', alignItems: 'center'}}>
+                                <div>
+                                <a href="https://www.github.com/vancesereda/decarlo-cms-client">
+                                <i className="fa fa-lg fa-github" />&nbsp;Front end (React)</a>
+                                    
+                                </div>
+                                <div>
+                                <a href="https://www.github.com/vancesereda/decarlo-cms-api">
+                                <i className="fa fa-lg fa-github" />
+                                    &nbsp;Back end (Serverless, AWS DynamoDB, AWS Cognito)
+
+                                </a>
+                                </div>  
+                                    
+                                    
+                            </div>
+
 
                            
                             
                         </div>
 
                         <br />
-                        <WeatherApp/>
-                        <p className= "in-between" >Created with LocationIQ (for geolocation), 
-                        Axios & DarkSky API for API calls, and WeatherIcons. API calls rerouted through Amazon API Gateway for CORS passthrough.</p> <br />
+                        <div className="background-box project-border" id="musicplayer">
+
+                            <p className="lead text-center">
+                                React Native Music Player
+                                <br />
+                            </p>
+                           
+                            
+                            
+                                                       
+                            <p className="info-text"> Portfolio site and content management system for Dominic Decarlo, visual graphic designer. The CMS was created with AWS DynamoDB, AWS Cognito, and AWS API Gateway. Features create, edit, update, and delete page dialogs for easy user editing. </p> 
+                            <strong><a href="https://www.github.com/vancesereda/decarlo-cms-client">Frontend</a><a href="https://www.github.com/vancesereda/decarlo-cms-api">Backend</a></strong>.        
+
+
+                           
+                            
+                        </div>
+                        <div id="weather">
+                            <br />
+                            <WeatherApp/>
+                            
+                            <p className= "in-between" >Created with LocationIQ (for geolocation), 
+                            Axios & DarkSky API for API calls, and WeatherIcons. API calls rerouted through Amazon API Gateway for CORS passthrough.</p> <br />
+                            <br />
+                        </div>
+                        
+                        <div id="calculator"><Calculator /></div>
                         <br />
                         
-                        <div><Calculator /></div>
-                        <br />
-                        
-                        <div><QuoteMachine /></div>
+                        <div id="quotemachine"><QuoteMachine /></div>
                         <br />
                     </Col>
                 </Container>
