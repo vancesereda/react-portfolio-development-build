@@ -57,9 +57,9 @@ class Projects extends Component {
                                 React Native Music Player
                                 <br />
                             </p>
-                            <SimpleSlider photos={["rn-1", "rn-2","rn-3"]} />
-                           
-
+                            <div className="resize">
+                                <SimpleSlider photos={["rn-1", "rn-2","rn-3"]} resize={true}/>
+                            </div>
                             
                                                        
                             <p className="info-text">Music player featuring library and background Youtube streaming features. This app allows you to play from your music library, stream Youtube videos as audio in the background, and download videos (and immediately add them to the library).</p> 

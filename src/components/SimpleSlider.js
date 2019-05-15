@@ -22,13 +22,14 @@ export default class SimpleSlider extends Component {
         initialSlide: 0,
         className:'slider-width'
     };
+    const { resize } = this.props;
     return (
         <div>
         <Slider {...settings}>
         {this.props.photos.map((photo, i) =>  (
             <div>
                 <img key={photo} src={require(`../images/${photo}.png`)}
-                onLoad={()=>window.dispatchEvent(new Event('resize'))}
+                onLoad={()=>window.dispatchEvent(new Event('resize'))} className={resize ? 'resize' : null}
                 />
             </div>
         ))}
