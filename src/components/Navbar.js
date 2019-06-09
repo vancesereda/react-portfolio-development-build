@@ -35,9 +35,7 @@ export default class CustomNavbar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/about">About</NavLink>
-              </NavItem>
+
               <NavItem>
                 <NavLink href="/projects">Portfolio</NavLink>
               </NavItem>
