@@ -186,10 +186,17 @@ class WeatherApp extends Component {
                   className="main-weather-icon" />
 
 
-                <p className="main-weather-text">{metric
+                <p className="main-weather-text">
+                {metric
                   ?
-                  Math.round((data[day].apparentTemperatureHigh - 32) * 5 / 9) :
-                  Math.round(data[day].apparentTemperatureHigh)}<sup onClick={this.handleTemperatureChange} style={{ 'cursor': 'pointer' }}>°F |°C</sup></p>
+                  Math.round((data[day].apparentTemperatureHigh - 32) * 5 / 9) 
+                  :
+                  Math.round(data[day].apparentTemperatureHigh)}
+                  <sup onClick={this.handleTemperatureChange} style={{ 'cursor': 'pointer' }}>
+                    <span className={metric ? 'metric-text' : '' }>°F  </span> |
+                    <span className={metric ? '' : 'metric-text'}>  °C</span></sup>
+                  
+                  </p>
 
 
 

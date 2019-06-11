@@ -75,8 +75,11 @@
         overflow-x: scroll;
     }
     sup {
-        vertical-align:super;
-        font-size:25%;
+        vertical-align:super !important;
+        font-size:30% !important;
+        /* font-style: bold !important */
+        /* font-weight: 700 !important */
+        
     }
 
     .padding-0 {
@@ -89,6 +92,9 @@
     
 }
 
+.metric-text {
+    color: rgba(0,0,0,0.4)
+}
 @media screen and (min-width: 992px) {
 
     .main-weather-icon {
@@ -130,8 +136,9 @@
         display:block;
     }
     sup {
-        vertical-align:super;
-        font-size:25%;
+        vertical-align:super !important;
+        font-size:25% !important;
+        font-style: bold !important
     }
 
     .scroll-grid {
@@ -160,15 +167,16 @@
 
 .transparent-input {
     color: black !important;
-    padding-left:0px;
-    font-size: 20px;
-    background: transparent;
-    border: none;
-    overflow: visible;
+    padding-left:0px !important;
+    font-size: 20px !important;
+    background: transparent !important;
+    border: none !important;
+    overflow: visible !important;
 }
 .form-control::placeholder {
     color: black !important
 }
+
 
 
 input[type=text], textarea {
