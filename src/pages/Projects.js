@@ -37,7 +37,7 @@ class Projects extends Component {
                                 </Col>
                                 <Col xs={12} md={6} className="text-center">
                                 
-                                    <a href="https://www.github.com/vancesereda/decarlo-cms-api">
+                                    <a href="https://www.github.com/vancesereda/decarlo-serverless-api">
                                         <i className="fa fa-lg fa-github" />
                                         <p className="github-font">&nbsp;Back end (Serverless, AWS DynamoDB, AWS Cognito)</p>
                                     </a>
