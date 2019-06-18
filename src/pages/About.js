@@ -13,7 +13,7 @@ class About extends Component {
         <div style={{justifyContent: 'center', alignItems: 'center'}}>
         <img className="img-responsive img profile-img" src="/vance.jpg" alt="avatar" />
             
-            <p className="front-page-intro-p"> I'm a B.S. Chem. Eng. '18  turned software engineer, currently living in Seattle, WA.
+            <p className="front-page-intro-p">B.S. Chem. Eng. '18  turned software engineer, currently living in Seattle, WA.
             I'm a  <strong> front end </strong> and  <strong> mobile engineer </strong>experienced with <strong> React, React Native, Java, Python, C# (Unity)</strong> and <strong> cloud-based serverless architecture </strong> with AWS.
             </p>
                         <a href="https://www.github.com/vancesereda/" ><i className="fa fa-github front-page-fa" ></i></a>
