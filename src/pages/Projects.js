@@ -83,11 +83,36 @@ class Projects extends Component {
                                     </a>
                                 
                                 </Col>
-
-
-
-
                             </Row>
+                        </div>
+                        <br />
+                        
+                        <div className="background-box project-border" id="unityapp">
+
+                            <p className="lead text-center">
+                               Unity Chess App
+                                <br />
+                            </p>
+                            <div className="resize">
+                                <SimpleSlider photos={["unitychess.gif"]} resize={false} width={'120%'} />
+                                {/* <img src={require(`../images/unitychess.gif`)} alt="Unity Chess gif" /> */}
+                            </div>
+                            
+                                                       
+                            <p className="info-text text-center">Chess App built in Unity. Features minmax AI algorithm (in progress) that uses a corecursive algorithm that finds the best move by searching down successive possible boards.</p> 
+
+
+                            <Row className="github">
+                                <Col xs={12} md={6} className="text-center">
+
+                                    <a href="https://www.github.com/vancesereda/UnityChess">
+                                        <i className="fa fa-lg fa-github" />&nbsp;
+                                        <p className="github-font">C# code (prefabs and other assets included)</p>
+                                    </a>
+                                        
+                                </Col>
+                            </Row>
+                        
 
                             
                         </div>

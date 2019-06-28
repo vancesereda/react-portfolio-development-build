@@ -28,8 +28,9 @@ export default class SimpleSlider extends Component {
         <Slider {...settings}>
         {this.props.photos.map((photo, i) =>  (
             <div>
-                <img key={photo} src={require(`../images/${photo}.png`)}
+                <img key={photo} src={require(`../images/${photo}${photo.includes('gif') ? '' :'.png'}`)}
                 onLoad={()=>window.dispatchEvent(new Event('resize'))} className={resize ? 'resize' : null}
+                style={{width: this.props.width || null}}
                 />
             </div>
         ))}
