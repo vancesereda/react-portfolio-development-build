@@ -99,7 +99,7 @@ class Projects extends Component {
                             </div>
                             
                                                        
-                            <p className="info-text text-center">Chess App built in Unity. Features minmax AI algorithm (in progress) that uses a corecursive algorithm that finds the best move by searching down successive possible boards.</p> 
+                            <p className="info-text text-center">Chess App built in Unity. Features minmax AI algorithm (in progress) that uses a corecursive depth-first-search to find the best move by searching down successive possible boards.</p> 
 
 
                             <Row className="github">
