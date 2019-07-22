@@ -11,7 +11,10 @@ class QuoteMachine extends Component {
             author: null,
             quote: null,
             hasQuote: false,
-            animate: false
+            animate: false,
+            numClicks: 0,
+            lastAuthor: null,
+            lastQuote: null
         },
         this.END_POINT = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
     }
@@ -20,9 +23,7 @@ class QuoteMachine extends Component {
     componentDidMount() {
         axios.get(this.END_POINT)
              .then(res => {
-                console.log(res.data)
                 const { quotes } = res.data
-                console.log(res.data);
                 this.setState({ quotes })
             return res.data.quotes
             })
@@ -35,10 +36,13 @@ class QuoteMachine extends Component {
     }
     getRandomQuote = () => {
 
-        const { quotes, quote, author, hasQuote, animate } = this.state;
+        const { quotes, quote, author, hasQuote, animate, numClicks, lastQuote, lastAuthor } = this.state;
+        if (numClicks > 1) {
+            this.setState({lastQuote: quote, lastAuthor: author})
+        }
         const randomSelection = quotes[Math.floor(Math.random() * 100)];
-
-        this.setState({quote: randomSelection.quote, author:randomSelection.author, hasQuote: true, animate: true});
+        
+        this.setState({quote: randomSelection.quote, author:randomSelection.author, hasQuote: true, animate: true, numClicks: numClicks+1});
      
     }
 
