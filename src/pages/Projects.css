@@ -6,7 +6,12 @@
 
     /* background-color: #ffffff */
 }
-
+.background-box a {
+    color: black;
+}
+a.nav-link {
+    color: black !important
+}
 .project-border img {
     max-width: 100%;
 }

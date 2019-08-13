@@ -40,8 +40,12 @@ export default class CustomNavbar extends React.Component {
                 <NavLink href="/projects">Portfolio</NavLink>
               </NavItem>
               <NavItem>
+                <NavLink href="/links">Links</NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink><ContactPopover /></NavLink>
               </NavItem>
+              
             </Nav>
           </Collapse>
         </Navbar>
