@@ -4,6 +4,7 @@ import CustomNavbar from './components/Navbar'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import About from './pages/About'
 import Projects from './pages/Projects'
+import Links from './pages/Links'
 
 
 
@@ -17,6 +18,7 @@ class App extends Component {
           <CustomNavbar />
           <Route exact path="/" component={About} />
           <Route path="/Projects" component={Projects} />
+          <Route path="/Links" component={Links} />
           <p className="contact">
            <br />Vance Sereda © {new Date().getFullYear()}<br />Built with React and Reactstrap</p>
         </div>
