@@ -6,7 +6,7 @@
 
     /* background-color: #ffffff */
 }
-.background-box a {
+.background-box a, a i {
     color: black;
 }
 a.nav-link {
